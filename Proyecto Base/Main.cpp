@@ -16,7 +16,7 @@ SDL_Texture* loadTexture(std::string path, SDL_Renderer* renderer);
 SDL_Window* _gWindow = NULL;
 SDL_Renderer* _gRenderer = NULL;
 int main(int argc, char* args[]) {
-
+	const Uint8* state;
 	SDL_Init(SDL_INIT_VIDEO);
 	bool success = true;
 	//Create window
@@ -50,8 +50,33 @@ int main(int argc, char* args[]) {
 		}
 	}
 
+	state = SDL_GetKeyboardState(NULL);
+	SDL_Event event;
+
 	do
 	{
+		while (SDL_PollEvent(&event) != 0)
+		{
+			//User requests quit
+			if (event.type == SDL_QUIT)
+			{
+				
+			}
+		}
+
+		if (state[SDL_SCANCODE_ESCAPE])
+		{
+			
+		}
+		if (state[SDL_SCANCODE_1]) 
+		{
+
+		}
+		if (state[SDL_SCANCODE_2]) 
+		{
+
+		}
+	
 		SDL_SetRenderDrawColor(_gRenderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
 		SDL_RenderClear(_gRenderer);
 		SDL_RenderPresent(_gRenderer);
