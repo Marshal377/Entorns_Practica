@@ -50,6 +50,12 @@ int main(int argc, char* args[]) {
 		}
 	}
 
+	do
+	{
+		SDL_SetRenderDrawColor(_gRenderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
+		SDL_RenderClear(_gRenderer);
+		SDL_RenderPresent(_gRenderer);
+	} while (true);
 	
 	system("pause");
 	return 0;
