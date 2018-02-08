@@ -49,6 +49,7 @@ int main(int argc, char* args[]) {
 			}
 		}
 	}
+	SDL_SetRenderDrawColor(_gRenderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
 
 	state = SDL_GetKeyboardState(NULL);
 	SDL_Event event;
@@ -70,14 +71,12 @@ int main(int argc, char* args[]) {
 		}
 		if (state[SDL_SCANCODE_1]) 
 		{
-
+			SDL_SetRenderDrawColor(_gRenderer, 255, 0, 0, SDL_ALPHA_OPAQUE);
 		}
 		if (state[SDL_SCANCODE_2]) 
 		{
 
 		}
-	
-		SDL_SetRenderDrawColor(_gRenderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
 		SDL_RenderClear(_gRenderer);
 		SDL_RenderPresent(_gRenderer);
 	} while (true);
